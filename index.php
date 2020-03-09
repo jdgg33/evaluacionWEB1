@@ -1,5 +1,6 @@
 <?php
 
+include("funcionesEvalua1.php");
 //Nombre: Juan David Gomez Garcia
 
 //Ejercicio 1
@@ -84,20 +85,20 @@ $valorneto=$Cantzapatosvendidos*$Precioparzapatos;
 echo("Valor total sin descuento : $".$valorneto." <br>");
 
 if($Cantzapatosvendidos== 3){
-    $descuento=$Precioparzapatos*0.1;
+    $descuento=$valorneto*0.1;
     $valor=$valorneto-$descuento;
-    echo("El valor a pagar es : $ ".$valor. " El descuento fue del 10% de : ".$descuento." <br>");
+    echo("El valor a pagar con descuento es : $ ".$valor. " El descuento fue del 10% de : ".$descuento." <br>");
 }else if($Cantzapatosvendidos> 3 && $Cantzapatosvendidos<= 5){
     $descuento=$valorneto*0.2;
-    $valor=$Precioparzapatos-$descuento;
-    echo("El valor a pagar es : $".$valor. " El descuento fue del 20% de : ".$descuento." <br>");
-}else if($Cantzapatosvendidos> 5 ){
-    $descuento=$Precioparzapatos*0.4;
     $valor=$valorneto-$descuento;
-    echo("El valor a pagar es : $".$valor. " El descuento fue del 40% de : ".$descuento." <br>");
+    echo("El valor a pagar con descuento es : $".$valor. " El descuento fue del 20% de : ".$descuento." <br>");
+}else if($Cantzapatosvendidos> 5 ){
+    $descuento=$valorneto*0.4;
+    $valor=$valorneto-$descuento;
+    echo("El valor a pagar con descuento es : $".$valor. " El descuento fue del 40% de : ".$descuento." <br>");
 }else{
     
-    echo("El valor a pagar es : $".$Precioparzapatos." <br>");
+    echo("El valor a pagar es : $".$valorneto." <br>");
 }
 
 //Ejercicio 4
@@ -111,13 +112,17 @@ echo("Sueldo Semanal <br>");
 
 $horaslaboradas=36;
 
+echo("Horas laboradas : $".$horaslaboradas."<br>");
+
 if($horaslaboradas<=40){
     $pago=$horaslaboradas*20000;
     echo("Sueldo Semanal es : $".$pago."<br>");
+    echo("valor hora es de $20000 <br>");
 
 }else{
     $pago=$horaslaboradas*25000;
     echo("Sueldo Semanal es : $".$pago."<br>");
+    echo("valor hora es de $25000 <br>");
 }
 
 
@@ -125,7 +130,7 @@ if($horaslaboradas<=40){
 //Ejercicio 5
 /*
 5.Bancolombia contrata sus servicios de desarrollador para realizar un programa en PHP que permita almacenar
-información de nombre, teléfono dirección y salario de 5 usuarios de una sucursal llamada sucursal A Además, su
+información de nombre, teléfono, dirección y salario de 5 usuarios de una sucursal llamada sucursal A Además, su
 programa debe estar en la capacidad de sumar todos los salarios de los usuarios de la sucursal A en una sola variable
 llamada sumatoriaSalarios y así poder comparar dicho valor con las sucursales B cuyo valor de salarios mensual es de
 20 000 000 y la sucursal C cuyo valor de salarios mensuales es de 15 000 000 Permita que su código muestre cual sucursal
@@ -134,7 +139,84 @@ A
 */
 
 echo("<br><br> Ejercicio 5 <br><br>");
-echo("Almacenar Datos <br>");
+echo("Almacenar Datos sucursal A <br>");
+
+$sucursalA=array('usuario1'=>array('Nombre'=>"Juan",'Telefono'=>1234567,'Direccion'=>"Calle 1",'Salario'=>1000000),
+                'usuario2'=>array('Nombre'=>"Maria",'Telefono'=>2345678,'Direccion'=>"Calle 2",'Salario'=>1500000),
+                'usuario3'=>array('Nombre'=>"James",'Telefono'=>3456789,'Direccion'=>"Calle 3",'Salario'=>200000),
+                'usuario4'=>array('Nombre'=>"Sandra",'Telefono'=>4567890,'Direccion'=>"Calle 4",'Salario'=>2500000),
+                'usuario5'=>array('Nombre'=>"David",'Telefono'=>5678901,'Direccion'=>"Calle 5",'Salario'=>3000000));
+
+
+foreach($sucursalA as $clavemayorunidimensional=>$sucursalA){    
+    echo ("<br>Los datos del ".$clavemayorunidimensional." de la Sucursal A, son :<br>");
+    foreach ($sucursalA as $clave=>$valor){
+    echo($clave." es : ".$valor."<br>");
+    }
+}
+    $salariosSucursalA=sumatoriaSalarios(1000000,1500000,200000,2500000,3000000);
+    
+    
+if($salariosSucursalA>20000000 && $salariosSucursalA>15000000){
+    echo("<br>La mejor sumatoria de salarios la tiene la Sucursal A ");
+    echo ("<br>Los salarios de la sucursal A suman : $".$salariosSucursalA."<br>");
+}else{
+    echo("<br>La mejor sumatoria de salarios la tiene la Sucursal B :$20'000.000");
+    echo ("<br>Los salarios de la sucursal A suman : $".$salariosSucursalA."<br>");
+}
+
+
+echo("<br><br>................................<br><br>");
+
+
+//Ejercicio 6
+/*
+6. Almacena en un Array los 10 primeros números pares. Imprima en pantalla cada uno de estos, en una línea diferente con el siguiente
+formato:
+El 1° numero par es: 2
+El 2° numero par es: 4
+*/
+echo("<br><br> Ejercicio 6 <br><br>");
+echo("Numeros Pares<br>");
+
+$pares=array(0,2,4,6,8,10,12,14,16,18,20);
+for($numerosPares=1; $numerosPares<count($pares); $numerosPares++){
+    echo("El numero par es ".$pares[$numerosPares]."<br>");
+}
+
+echo("<br><br>................................<br><br>");
+
+//Ejercicio 7
+/*
+7. Después de realizar una consulta en la base de datos DE LA JUGOSA SAS se tienen almacenados 
+los valores de dicha consulta en un arreglo denominado salpicon, el cual presenta la siguiente configuración:
+[dulce1]=>”Banano”
+[dulce2]=>”Manzana”
+[dulce3]=>”Durazno”
+[acido1]=>”Piña”
+[acido2]=>”Naranja”
+[acido3]=>”Lulo”
+*/
+echo("<br><br> Ejercicio 7 <br><br>");
+echo("Salpicon<br>");
+
+$Salpicon=array('dulce1'=>"Banano,",'dulce2'=>"Manzana,",'dulce3'=>"Durazno,",'acido1'=>"Piña,",'acido2'=>"Naranja,",'acido3'=>"Lulo");
+ 
+    echo ("<br>El salpicon esta compuesto por: <br>");
+    print_r($Salpicon);
+
+echo("<br><br>................................<br><br>");
+
+//Ejercicio 8
+/*
+8. La federación nacional de fútbol necesita de sus servicios como desarrollador de software, 
+para codificar una función en PHP que permita calcular la edad de los jugadores, 
+de acuerdo al año de nacimiento de estos. Declare la función calcularEdad() y pruebe su funcionamiento
+con los años de nacimiento 1991,1995,1987.
+*/
+echo("<br><br> Ejercicio 8 <br><br>");
+echo("Salpicon<br>");
+
 
 
 
