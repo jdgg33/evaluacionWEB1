@@ -32,6 +32,8 @@ echo("<b> Division </b> <br>");
 $division=$n1/$n2;
 echo("la division de los numeros n1 y n2 es : ".$division."<br><br>");
 
+echo("<br><br>................................<br><br>");
+
 //Ejercicio 2
 /*La clasificación del IMC es la siguiente:
     • IMC <= 18,4 (Insuficiencia de peso)
@@ -65,6 +67,8 @@ if($imc<= 18.4){
 }else{
     echo("<b> El usuario tiene Obesidad 3 </b> <br>");
 }
+
+echo("<br><br>................................<br><br>");
 
 //Ejercicio 3
 /*
@@ -101,6 +105,8 @@ if($Cantzapatosvendidos== 3){
     echo("<b> El valor a pagar es : $".$valorneto."</b> <br>");
 }
 
+echo("<br><br>................................<br><br>");
+
 //Ejercicio 4
 /*
 4.Hacer un programa en PHP para ayudar a un trabajador de Postobón a saber cuál será su sueldo semanal, se sabe que si
@@ -125,6 +131,7 @@ if($horaslaboradas<=40){
     echo("valor hora es de $25000 <br>");
 }
 
+echo("<br><br>................................<br><br>");
 
 //Ejercicio 5
 /*
