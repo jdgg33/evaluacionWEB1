@@ -6,31 +6,28 @@ include("funcionesEvalua1.php");
 //Ejercicio 1
 echo("<b><u><big>Evaluacion 1, Elaborado por Juan David Gomez Garcia </big></u></b> <br><br>");
 echo("<b><u><big> Ejercicio 1 </big></u></b> <br><br>");
-$n1=123;
-$n2=456;
+$n1=1234;
+$n2=567;
 
 echo("N1 = ".$n1."<br>");
 echo("N2 = ".$n2."<br><br>");
 
-echo("<b> Suma </b> <br>");
-
 $suma=$n1+$n2;
+$resta=$n1-$n2;
+$multiplicacion=$n1*$n2;
+$division=$n1/$n2;
 
-echo("la suma de los numeros n1 y n2 es : ".$suma."<br><br>");
+echo("<b> Suma </b> <br>");
+echo("la suma de los numeros N1 y N2 es : ".$suma."<br><br>");
 
 echo("<b> Resta </b> <br>");
-$resta=$n1-$n2;
-
-echo("la resta de los numeros n1 y n2 es : ".$resta."<br><br>");
+echo("la resta de los numeros N1 y N2 es : ".$resta."<br><br>");
 
 echo("<b> Multipliacion </b> <br>");
-$multiplicacion=$n1*$n2;
-
-echo("la multiplicacion de los numeros n1 y n2 es : ".$multiplicacion."<br><br>");
+echo("la multiplicacion de los numeros N1 y N2 es : ".$multiplicacion."<br><br>");
 
 echo("<b> Division </b> <br>");
-$division=$n1/$n2;
-echo("la division de los numeros n1 y n2 es : ".$division."<br><br>");
+echo("la division de los numeros N1 y N2 es : ".$division."<br><br>");
 
 echo("<br><br>................................<br><br>");
 
@@ -147,20 +144,20 @@ A
 echo("<br><br><b><u><big> Ejercicio 5 </big></u></b> <br><br>");
 echo("<b><u><big> Almacenar Datos sucursal A </big></u></b> <br>");
 
-$sucursalA=array('usuario1'=>array('Nombre'=>"Juan",'Telefono'=>1234567,'Direccion'=>"Calle 1",'Salario'=>1000000),
-                'usuario2'=>array('Nombre'=>"Maria",'Telefono'=>2345678,'Direccion'=>"Calle 2",'Salario'=>1500000),
-                'usuario3'=>array('Nombre'=>"James",'Telefono'=>3456789,'Direccion'=>"Calle 3",'Salario'=>200000),
-                'usuario4'=>array('Nombre'=>"Sandra",'Telefono'=>4567890,'Direccion'=>"Calle 4",'Salario'=>2500000),
-                'usuario5'=>array('Nombre'=>"David",'Telefono'=>5678901,'Direccion'=>"Calle 5",'Salario'=>3000000));
+$sucursalA=array('usuario1'=>array('Nombre'=>"Juan",'Telefono'=>1234567,'Direccion'=>"Carrera 1",'Salario'=>1500000),
+                'usuario2'=>array('Nombre'=>"Maria",'Telefono'=>2345678,'Direccion'=>"Carrera 2",'Salario'=>1700000),
+                'usuario3'=>array('Nombre'=>"James",'Telefono'=>3456789,'Direccion'=>"Carrera 3",'Salario'=>230000),
+                'usuario4'=>array('Nombre'=>"Sandra",'Telefono'=>4567890,'Direccion'=>"Carrera 4",'Salario'=>2800000),
+                'usuario5'=>array('Nombre'=>"David",'Telefono'=>5678901,'Direccion'=>"Carrera 5",'Salario'=>3200000));
 
 
-foreach($sucursalA as $clavemayorunidimensional=>$sucursalA){    
-    echo ("<br>Los datos del ".$clavemayorunidimensional." de la Sucursal A, son :<br>");
+foreach($sucursalA as $clavemayorA=>$sucursalA){    
+    echo ("<br>Los datos del ".$clavemayorA." de la Sucursal A, son :<br>");
     foreach ($sucursalA as $clave=>$valor){
     echo("<b>".$clave." es : </b> ".$valor."<br>");
     }
 }
-    $salariosSucursalA=sumatoriaSalarios(1000000,1500000,200000,2500000,3000000);
+    $salariosSucursalA=sumatoriaSalarios(1500000,1700000,230000,2800000,3200000);
     
     
 if($salariosSucursalA>20000000 && $salariosSucursalA>15000000){

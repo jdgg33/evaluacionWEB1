@@ -1,5 +1,6 @@
 <?php
 
+
 //Ejercicio 5
 
 function sumatoriaSalarios($salario1,$salario2,$salario3,$salario4,$salario5){
